@@ -1,0 +1,66 @@
+body {
+    background-color: #2E2250;
+    font-family: 'Nunito', sans-serif;
+}
+
+h2 {
+    color: #fff;
+    font-weight: 800;
+    font-weight: 900;
+    font-size: 24.4667px;
+}
+
+.text {
+    margin: 2em 0;
+    padding: 0 6em;
+}
+
+.main-logo {
+    display: flex;
+    justify-content: center;
+    margin-top: 5em;
+}
+
+.main-form {
+    input {
+        background-color: #130E22 !important;
+        border: none !important;
+        padding: 1.6em 8px !important;
+        color: #fff !important;
+    }
+
+    input::placeholder {
+        color: #fff !important;
+    }
+
+    .btn-cadastro {
+        background: #29E33B;
+        width: 100%;
+        padding: 1.1em;
+        color: #fff;
+        font-weight: 700;
+    }
+}
+
+.main-text {
+
+    h2 {
+        color: #FF001F;
+        font-weight: 800;
+        font-weight: 900;
+        font-size: 24.4667px;
+        padding: 0 3em;
+        margin-top: 2em;
+    }
+
+    p {
+        color: #FFFFFF;
+        font-weight: 400;
+        font-size: 24.4667px;
+        line-height: 24px;
+        padding: 0 3em;
+        text-align: center;
+        letter-spacing: -0.02em;
+    }
+
+}
