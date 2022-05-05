@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PainelController;
 use App\Http\Controllers\PreCadastroController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PreCadastroController::class, 'index']);
 Route::get('/success', [PreCadastroController::class, 'create'])->name('success');
 Route::post('/pre/store', [PreCadastroController::class, 'store'])->name('pre.store');
+
+
+Route::get('admin', [PainelController::class, 'index'])->name('painel');
+Route::get('empresas', [PainelController::class, 'empresas'])->name('empresas');
