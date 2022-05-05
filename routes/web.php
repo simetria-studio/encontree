@@ -19,6 +19,12 @@ Route::get('/', [PreCadastroController::class, 'index']);
 Route::get('/success', [PreCadastroController::class, 'create'])->name('success');
 Route::post('/pre/store', [PreCadastroController::class, 'store'])->name('pre.store');
 
+Route::middleware('auth')->prefix('admin')->group(function () {
+    Route::get('/', [PainelController::class, 'index'])->name('painel');
+    Route::get('empresas', [PainelController::class, 'empresas'])->name('empresas');
+});
 
-Route::get('admin', [PainelController::class, 'index'])->name('painel');
-Route::get('empresas', [PainelController::class, 'empresas'])->name('empresas');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
