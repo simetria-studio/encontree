@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EmpresaController;
 use App\Http\Controllers\PainelController;
 use App\Http\Controllers\PreCadastroController;
 use Illuminate\Support\Facades\Route;
@@ -28,3 +29,4 @@ Route::middleware('auth')->prefix('admin')->group(function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::post('file-import', [EmpresaController::class, 'import'])->name('file-import');
