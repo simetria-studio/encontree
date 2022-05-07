@@ -15,7 +15,9 @@ class EmpresaController extends Controller
      */
     public function index()
     {
-        //
+        $empresas = Empresa::take(500)->get();
+
+        return $empresas;
     }
 
     /**
