@@ -31,3 +31,4 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('file-import', [EmpresaController::class, 'import'])->name('file-import');
 Route::get('empresas', [EmpresaController::class, 'index'])->name('empresas');
+Route::get('empresas-filtro', [EmpresaController::class, 'filtro'])->name('filtro');

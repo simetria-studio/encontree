@@ -15,18 +15,15 @@ class EmpresaController extends Controller
      */
     public function index()
     {
-        $empresas = Empresa::take(500)->get();
-
-        $result = (object)$empresas;
-         
-        $result = new \stdClass();
-        foreach ($empresas as $key => $value) {
-            $result->key = $value;
-        }
-        $object = json_decode(json_encode($empresas), FALSE);
-        return $object;
+        $empresas = Empresa::take(1000)->get();
+        return response()->json($empresas);
     }
 
+    public function filtro(Request $request)
+    {
+        $empresas = Empresa::where('cnpj', $request->cnpj)->orWhere('situacao', $request->situacao)->orWhere('bairro', $request->bairro)->get();
+        return $empresas;
+    }
     /**
      * Show the form for creating a new resource.
      *
