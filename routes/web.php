@@ -22,7 +22,7 @@ Route::post('/pre/store', [PreCadastroController::class, 'store'])->name('pre.st
 
 Route::middleware('auth')->prefix('admin')->group(function () {
     Route::get('/', [PainelController::class, 'index'])->name('painel');
-    Route::get('empresas', [PainelController::class, 'empresas'])->name('empresas');
+    Route::get('site-empresas', [PainelController::class, 'empresas'])->name('site.empresas');
 });
 
 

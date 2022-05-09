@@ -17,7 +17,14 @@ class EmpresaController extends Controller
     {
         $empresas = Empresa::take(500)->get();
 
-        return $empresas;
+        $result = (object)$empresas;
+         
+        $result = new \stdClass();
+        foreach ($empresas as $key => $value) {
+            $result->key = $value;
+        }
+        $object = json_decode(json_encode($empresas), FALSE);
+        return $object;
     }
 
     /**
